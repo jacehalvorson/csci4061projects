@@ -1,0 +1,15 @@
+>> cat test_commands/6.txt | ./run_terminal_session | dos2unix
+@> cat  < test_data/numbers.txt | sort -n | head -n 10 > out.txt
+@> exit
+>> cat out.txt
+3
+3
+7
+7
+7
+26
+34
+36
+38
+44
+>> rm -f out.txt

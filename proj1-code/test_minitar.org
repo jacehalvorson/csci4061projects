@@ -1,0 +1,243 @@
+#+TITLE: Project 1 Tests
+#+TESTY: PREFIX="proj01"
+
+* Create Archive from Single Text File
+Creates an archive from a single text file
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 1
+hello.txt
+#+END_SRC
+
+* Create Archive from Single Binary file
+Creates an archive from a single binary file
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 2
+f1.bin
+#+END_SRC
+
+* Create Multi-File Archive
+Creates an archive from the multiple files, both text and binary
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 3
+hello.txt
+f2.bin
+#+END_SRC
+
+* Create Archive from Large Text File
+Creates an archive from a very large text file
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 4
+gatsby.txt
+#+END_SRC
+
+* Create Archive from Large Binary Text File
+Creates an archive from a very large binary file
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 5
+large.bin
+#+END_SRC
+
+* Create Archive with Many Files
+Creates an archive from many different files, both text and binary
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 6
+hello.txt
+gatsby.txt
+f1.txt
+f1.bin
+f2.txt
+f2.bin
+f3.txt
+f3.bin
+f4.txt
+f4.bin
+f5.txt
+f5.bin
+f6.txt
+f6.bin
+f7.txt
+f7.bin
+f8.txt
+f8.bin
+f9.txt
+f9.bin
+f10.txt
+f10.bin
+#+END_SRC
+
+* Append Single File to Archive
+Creates an initial archive file and then appends one file to that archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 7
+hello.txt
+f1.bin
+f2.bin
+hello.txt
+f1.bin
+f2.bin
+f1.txt
+#+END_SRC
+
+* Append Single Large File to Archive
+Creates an initial archive file and then appends a large text file to that archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 8
+f1.txt
+f2.txt
+f17.bin
+f13.txt
+f1.txt
+f2.txt
+f17.bin
+f13.txt
+gatsby.txt
+#+END_SRC
+
+* Append Multiple Files to Archive
+Creates an initial archive file and then appends multiple files to that archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 9
+f4.txt
+f8.bin
+f15.bin
+f16.txt
+f4.txt
+f8.bin
+f15.bin
+f16.txt
+f2.bin
+hello.txt
+f9.bin
+#+END_SRC
+
+* List Member Files of Single-File Archive
+Creates a simple single-file archive, then lists all member files
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 10
+hello.txt
+#+END_SRC
+
+* List Member Files of Multi-File Archive
+Creates an initial archive file and then lists all member files
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 11
+hello.txt
+f18.txt
+f20.bin
+f19.bin
+f13.txt
+#+END_SRC
+
+* List Member Files Before and After Append
+Creates an initial archive file, lists member files, appends to the archive,
+then lists files again
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 12
+large.bin
+f6.txt
+f19.bin
+f11.txt
+large.bin
+f6.txt
+f19.bin
+f11.txt
+f8.txt
+f4.txt
+f18.bin
+gatsby.txt
+#+END_SRC
+
+* Update Single File Within Archive
+Creates a multi-file archive and then updates one of its files
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 13
+gatsby.txt
+f20.bin
+f15.txt
+f15.txt
+#+END_SRC
+
+
+* Attempt Update to Non-Existent File
+Creates a multi-file archive and then attempts to update a file not present in
+the archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 14
+large.bin
+f19.txt
+f7.bin
+#+END_SRC
+
+* Update Multiple Files Within Archive
+Creates an initial archive file and then updates several of its files to new versions
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 15
+gatsby.txt
+f20.bin
+f15.txt
+f15.txt
+f20.bin
+#+END_SRC
+
+* Attempt to Update Multiple Non-Existent Files
+Creates a multi-archive then attempts to update several files, each not
+contained in the archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 16
+large.bin
+f19.txt
+f7.bin
+#+END_SRC
+
+* Attempt to Update Existent and Non-Existent Files
+Creates an initial archive file and attempts to update files both contained and
+not contained in that archive
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 17
+large.bin
+f19.txt
+f7.bin
+#+END_SRC
+
+* Extract Files from Archive Created by tar
+Creates an archive using the standard tar tool, then extracts it with minitar
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 18
+large.bin
+f1.txt
+f9.txt
+f9.bin
+f1.bin
+gatsby.txt
+#+END_SRC
+
+* Extract Files from Archive Created by minitar
+Creates an archive using the standard minitar, then extracts its files
+
+#+BEGIN_SRC sh
+>> ./minitar_tests.sh 19
+large.bin
+f1.txt
+f9.txt
+f9.bin
+f1.bin
+gatsby.txt
+#+END_SRC

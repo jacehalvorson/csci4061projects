@@ -1,0 +1,4 @@
+>> cat test_commands/2.txt | ./run_terminal_session | dos2unix
+@> echo hello | cat
+hello
+@> exit

@@ -1,0 +1,17 @@
+>> cat test_commands/10.txt | ./run_terminal_session | dos2unix
+@> tr -cs A-Za-z \n < test_data/gatsby.txt | tr A-Z a-z | sort | uniq -c | sort -rn | head -n 12 > out.txt
+@> exit
+>> cat out.txt
+   2594 the
+   1635 and
+   1471 a
+   1393 i
+   1242 of
+   1213 to
+    867 in
+    857 he
+    770 was
+    658 that
+    621 it
+    597 you
+>> rm -f out.txt
